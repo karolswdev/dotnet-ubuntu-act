@@ -20,6 +20,13 @@ RUN sudo curl https://raw.githubusercontent.com/nektos/act/master/install.sh | s
 #Set up git
 RUN apt-get install -y git
 
+#Setup for tzdata
+
+RUN export DEBIAN_FRONTEND=noninteractive
+RUN ln -fs /usr/share/zoneinfo/America/New_York /etc/localtime
+RUN apt-get install -y tzdata
+RUN dpkg-reconfigure --frontend noninteractive tzdata
+
 #Set up node
 RUN apt-get install -y nodejs
 
