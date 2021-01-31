@@ -9,7 +9,7 @@
 
 ## Environment
 
-There are three main mount points for your attention:
+There are two main mount points for your attention:
 
 * **/env**
 
