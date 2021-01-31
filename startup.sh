@@ -33,5 +33,12 @@ for process in "${processes[@]}"; do
     fi
 done
 
+# Setup defaults for act
+
+echo "-P ubuntu-latest=node:12.6-buster-slim" >> ~/.actrc
+echo "-P ubuntu-12.04=node:12.6-buster-slim" >> ~/.actrc
+echo "-P ubuntu-18.04=node:12.6-buster-slim" >> ~/.actrc
+echo "-P ubuntu-16.04=node:12.6-stretch-slim" >> ~/.actrc
+
 # Wait processes to be running
 act --env-file /env/local-build.env --secret-file /env/local-build.secrets --privileged -P ubuntu-latest=karolczajkowski/dotnet-ubuntu-dind:latest
